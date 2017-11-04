@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                             alert = dialog2.create();
-                            alert.setTitle("Delete " + bus.getName()     + "?");
+                            alert.setTitle("Borrar " + bus.getName()     + "?");
                             alert.setMessage("Estas seguro de borrar esta empresa?");
                             alert.show();
                         }
