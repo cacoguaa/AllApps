@@ -113,4 +113,24 @@ public class BusinessOperations {
     public void removeEmployee(Business business) {
         database.delete(BusinessDBHandler.TABLE_BUSINESS, BusinessDBHandler.COLUMN_ID + "=" + business.getId(), null);
     }
+
+    public List<Business> getBusiness(String name) {
+        name = "name = '" + name + "' or type = '" + name + "'";
+        Cursor cursor = database.query(BusinessDBHandler.TABLE_BUSINESS,allColumns,name,null, null,null, null, null);
+        List<Business> businesses = new ArrayList<>();
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                Business business = new Business();
+                business.setId(cursor.getLong(cursor.getColumnIndex(BusinessDBHandler.COLUMN_ID)));
+                business.setName(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_NAME)));
+                business.setUrl(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_URL)));
+                business.setPhone(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_PHONE)));
+                business.setEmail(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_EMAIL)));
+                business.setDescription(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_DESCRIPTION)));
+                business.setType(cursor.getString(cursor.getColumnIndex(BusinessDBHandler.COLUMN_TYPE)));
+                businesses.add(business);
+            }
+        }
+        return  businesses;
+    }
 }

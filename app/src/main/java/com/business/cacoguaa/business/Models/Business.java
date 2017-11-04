@@ -86,7 +86,7 @@ public class Business {
 
     public String toString(){
         return "id: " + getId()+ "\n" +
-                "Nomnre: " + getName() + "\n" +
+                "Nombre: " + getName() + "\n" +
                 "Url: " + getUrl() + "\n" +
                 "Descripción: " + getDescription() + "\n" +
                 "Tipo: " + getType() + "\n" +
