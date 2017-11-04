@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.business.cacoguaa.business.AddUpdateBusiness">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_name"
+            android:padding="@dimen/view_padding"
+            android:textSize="@dimen/add_edit_textsize" />
+
+        <EditText
+            android:id="@+id/edit_text_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_url"
+            android:padding="@dimen/view_padding"
+            android:textSize="@dimen/add_edit_textsize" />
+
+        <EditText
+            android:id="@+id/edit_text_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_phone"
+            android:padding="@dimen/view_padding"
+            android:textSize="@dimen/add_edit_textsize" />
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_email"
+            android:padding="@dimen/view_padding"
+            android:textSize="@dimen/add_edit_textsize" />
+
+        <EditText
+            android:id="@+id/edit_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_description"
+            android:padding="@dimen/view_padding"
+            android:textSize="@dimen/add_edit_textsize" />
+
+        <TextView
+            android:id="@+id/text_view_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:textSize="@dimen/add_edit_textsize"
+            android:paddingRight="25dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="25dp">
+
+            <RadioButton
+                android:id="@+id/radio_consult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_consult"
+                android:textSize="@dimen/add_edit_textsize" />
+
+            <RadioButton
+                android:id="@+id/radio_development"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_development"
+                android:textSize="@dimen/add_edit_textsize" />
+
+            <RadioButton
+                android:id="@+id/radio_fabric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_fabric"
+                android:textSize="@dimen/add_edit_textsize" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_add_update_business"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/button_padding"
+            android:text="@string/add_business"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

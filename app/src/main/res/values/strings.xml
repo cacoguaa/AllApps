@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Empresas</string>
+    <string name="action_settings">Opciones</string>
+    <string name="choose_menu">Escoge una acción a realizar</string>
+    <string name="button_add_business">Añadir Empresa</string>
+    <string name="button_edit_business">Editar Empresa</string>
+    <string name="button_delete_business">Eliminar Empresa</string>
+    <string name="button_view_businesses">Ver Empresas</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="enter_business_id">Ingresa Id De La Empresa</string>
+    <string name="add_name">Nombre</string>
+    <string name="add_url">url</string>
+    <string name="add_phone">Telefono</string>
+    <string name="add_email">E-mail</string>
+    <string name="add_description">Descripción</string>
+    <string name="type">Tipo Empresa</string>
+    <string name="string_consult">Consultoria</string>
+    <string name="string_development">Desarrollo</string>
+    <string name="string_fabric">Fabrica</string>
+    <string name="add_business">Añadir Empresa</string>
+</resources>
