@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.business.cacoguaa.business.DB.BusinessOperations;
+import com.business.cacoguaa.business.Models.Business;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -111,10 +111,30 @@ public class MainActivity extends AppCompatActivity {
                         // get user input and set it to result
                         // edit text
                         if(!userInput.getText().toString().equals("")) {
-                            businessOps = new BusinessOperations(MainActivity.this);
-                            businessOps.removeEmployee(businessOps.getEmployee(Long.parseLong(userInput.getText().toString())));
-                            Toast t = Toast.makeText(MainActivity.this, "Employee removed successfully!", Toast.LENGTH_SHORT);
-                            t.show();
+                            final AlertDialog alert;
+                            final Business bus = businessOps.getBusiness(Long.parseLong(userInput.getText().toString()));
+                            AlertDialog.Builder dialog2 = new AlertDialog.Builder(MainActivity.this);
+                            dialog2.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    // get user input and set it to result
+                                    // edit text
+                                    if(!userInput.getText().toString().equals("")) {
+                                        businessOps = new BusinessOperations(MainActivity.this);
+                                        businessOps.removeBusiness(businessOps.getBusiness(Long.parseLong(userInput.getText().toString())));
+                                        Toast t = Toast.makeText(MainActivity.this, "Empresa borrada exitosamente!", Toast.LENGTH_SHORT);
+                                        t.show();
+                                    }
+                                }
+                            });
+                            dialog2.setNegativeButton("Cancelar",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+
+                                }
+                            });
+                            alert = dialog2.create();
+                            alert.setTitle("Delete " + bus.getName()     + "?");
+                            alert.setMessage("Estas seguro de borrar esta empresa?");
+                            alert.show();
                         }
                     }
                 }).create()

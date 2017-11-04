@@ -63,7 +63,7 @@ public class BusinessOperations {
 
     //Get One Business
     // Getting single Employee
-    public Business getEmployee(long id) {
+    public Business getBusiness(long id) {
         database = dbhandler.getWritableDatabase();
         Cursor cursor = database.query(BusinessDBHandler.TABLE_BUSINESS,allColumns,BusinessDBHandler.COLUMN_ID + "=?",new String[]{String.valueOf(id)},null,null, null, null);
         if (cursor != null) cursor.moveToFirst();
@@ -95,7 +95,7 @@ public class BusinessOperations {
     }
 
     // Updating Business
-    public int updateEmployee(Business business) {
+    public int updateBusiness(Business business) {
         ContentValues values = new ContentValues();
         values.put(BusinessDBHandler.COLUMN_NAME, business.getName());
         values.put(BusinessDBHandler.COLUMN_URL, business.getUrl());
@@ -110,7 +110,7 @@ public class BusinessOperations {
     }
 
     // Deleting Business
-    public void removeEmployee(Business business) {
+    public void removeBusiness(Business business) {
         database.delete(BusinessDBHandler.TABLE_BUSINESS, BusinessDBHandler.COLUMN_ID + "=" + business.getId(), null);
     }
 

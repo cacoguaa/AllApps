@@ -106,7 +106,7 @@ public class AddUpdateBusiness extends AppCompatActivity {
                     oldBusiness.setPhone(phoneEditText.getText().toString());
                     oldBusiness.setEmail(emailEditText.getText().toString());
                     oldBusiness.setDescription(descriptionEditText.getText().toString());
-                    businessData.updateEmployee(oldBusiness);
+                    businessData.updateBusiness(oldBusiness);
                     Toast t = Toast.makeText(AddUpdateBusiness.this, "Employee "+ oldBusiness.getName() + " has been updated successfully !", Toast.LENGTH_SHORT);
                     t.show();
                     Intent i = new Intent(AddUpdateBusiness.this,MainActivity.class);
@@ -117,7 +117,7 @@ public class AddUpdateBusiness extends AppCompatActivity {
     }
 
     private void initializeBusiness(long id) {
-        oldBusiness = businessData.getEmployee(id);
+        oldBusiness = businessData.getBusiness(id);
 
         nameEditText.setText(oldBusiness.getName());
         urlEditText.setText(oldBusiness.getUrl());
