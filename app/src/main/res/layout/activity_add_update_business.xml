@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_url"
+            android:inputType="textUri"
             android:padding="@dimen/view_padding"
             android:textSize="@dimen/add_edit_textsize" />
 
@@ -33,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_phone"
+            android:inputType="number"
             android:padding="@dimen/view_padding"
             android:textSize="@dimen/add_edit_textsize" />
 
@@ -41,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_email"
+            android:inputType="textEmailAddress"
             android:padding="@dimen/view_padding"
             android:textSize="@dimen/add_edit_textsize" />
 

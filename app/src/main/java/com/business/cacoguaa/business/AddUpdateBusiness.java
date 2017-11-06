@@ -56,7 +56,7 @@ public class AddUpdateBusiness extends AppCompatActivity {
 
         mode = getIntent().getStringExtra(EXTRA_ADD_UPDATE);
         if(mode.equals("Update")){
-            addUpdateButton.setText("Update Business");
+            addUpdateButton.setText("Actualizar Empresa");
             id = getIntent().getLongExtra(EXTRA_EMP_ID,0);
             initializeBusiness(id);
         }
@@ -67,19 +67,19 @@ public class AddUpdateBusiness extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // find which radio button is selected
                 if (checkedId == R.id.radio_consult) {
-                    newBusiness.setType("Consult");
+                    newBusiness.setType("Consultoria");
                     if(mode.equals("Update")){
-                        oldBusiness.setType("Consult");
+                        oldBusiness.setType("Consultoria");
                     }
                 } else if (checkedId == R.id.radio_development) {
-                    newBusiness.setType("Development");
+                    newBusiness.setType("Desarrollo");
                     if(mode.equals("Update")){
-                        oldBusiness.setType("Development");
+                        oldBusiness.setType("Desarrollo");
                     }
                 } else if (checkedId == R.id.radio_fabric) {
-                    newBusiness.setType("Fabric");
+                    newBusiness.setType("Fabricacion");
                     if(mode.equals("Update")){
-                        oldBusiness.setType("Fabric");
+                        oldBusiness.setType("Fabricacion");
                     }
                 }
             }
@@ -96,7 +96,7 @@ public class AddUpdateBusiness extends AppCompatActivity {
                     newBusiness.setEmail(emailEditText.getText().toString());
                     newBusiness.setDescription(descriptionEditText.getText().toString());
                     businessData.addBusiness(newBusiness);
-                    Toast t = Toast.makeText(AddUpdateBusiness.this, "Employee "+ newBusiness.getName() + "has been added successfully !", Toast.LENGTH_SHORT);
+                    Toast t = Toast.makeText(AddUpdateBusiness.this, "Empresa "+ newBusiness.getName() + " añadida exitosamente!", Toast.LENGTH_SHORT);
                     t.show();
                     Intent i = new Intent(AddUpdateBusiness.this,MainActivity.class);
                     startActivity(i);
@@ -107,7 +107,7 @@ public class AddUpdateBusiness extends AppCompatActivity {
                     oldBusiness.setEmail(emailEditText.getText().toString());
                     oldBusiness.setDescription(descriptionEditText.getText().toString());
                     businessData.updateBusiness(oldBusiness);
-                    Toast t = Toast.makeText(AddUpdateBusiness.this, "Employee "+ oldBusiness.getName() + " has been updated successfully !", Toast.LENGTH_SHORT);
+                    Toast t = Toast.makeText(AddUpdateBusiness.this, "Empresa "+ oldBusiness.getName() + " actualizada exitosamente!", Toast.LENGTH_SHORT);
                     t.show();
                     Intent i = new Intent(AddUpdateBusiness.this,MainActivity.class);
                     startActivity(i);
@@ -126,8 +126,8 @@ public class AddUpdateBusiness extends AppCompatActivity {
         descriptionEditText.setText(oldBusiness.getDescription());
         String type = oldBusiness.getType();
         int i = 0;
-        if( type.equals("Consult") ) i = R.id.radio_consult;
-        else if ( type.equals("Development") ) i = R.id.radio_development;
+        if( type.equals("Consultoria") ) i = R.id.radio_consult;
+        else if ( type.equals("Desarrollo") ) i = R.id.radio_development;
         else i = R.id.radio_fabric;
         radioGroup.check(i);
     }
